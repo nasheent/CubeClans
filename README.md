@@ -85,6 +85,24 @@ All settings can be customized in `config.yml`:
 - Menu layouts and items
 - Auto-save intervals
 
+## API
+
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.nasheent</groupId>
+        <artifactId>CubeClans</artifactId>
+        <version>v1.0.7</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+
 ## Building
 
 1. Make sure you have Maven installed
