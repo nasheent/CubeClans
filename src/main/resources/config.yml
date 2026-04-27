@@ -1,0 +1,335 @@
+# CubeClans Configuration File
+# A complete clan system for Minecraft servers
+# By nashee, for players who love clans!
+
+# For PLAYER_HEAD items, you can use custom textures by adding the Base64 texture value:
+    # Example:
+    #   material: PLAYER_HEAD
+    #   texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJmZGY3YWI4NTk4NzBhNzc4Mjc5ZjQ4YmY5MDUzODAyODM0NDdhMWVmMWZjNWU3MGFkODIyYjYyMjI3OTM4In19fQ=="   
+
+# ¿You need help? you can contact me on Discord: nasheent ! without #
+
+# Database Settings
+database:
+  # Database type: SQLITE or MYSQL
+  type: SQLITE
+  
+  # MySQL/MariaDB settings (only used if type is MYSQL)
+  mysql:
+    host: localhost
+    port: 3306
+    database: cubeclans
+    username: root
+    password: password
+    # HikariCP pool settings (optimized for performance)
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 5000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# General Settings
+settings:
+  # Minimum length for clan names
+  min-clan-name-length: 3
+  # Maximum length for clan names
+  max-clan-name-length: 16
+  # Maximum number of members per clan
+  max-clan-members: 10
+  # Maximum number of allies per clan
+  max-clan-allies: 3
+  # Maximum number of enemies per clan
+  max-clan-enemies: 5
+  # Allow clan names with spaces
+  allow-spaces-in-names: false
+  # Allow color codes in clan names
+  allow-colors-in-names: true
+  # Cooldown for color changes in seconds
+  color-change-cooldown: 3
+  # Save data interval (in ticks, 20 ticks = 1 second)
+  auto-save-interval: 6000
+  # Cost to create a clan (set to -1 for free)
+  clan-creation-cost: 300
+
+# Placeholder defaults when a player has no clan
+placeholders:
+  no-clan-name: "[none]"
+  no-clan-name-color: "&7[none]"
+  # Colors used by %cube_playername% and %rel_cube_playername%
+  # enemy = target is enemy clan
+  # ally = target is allied clan
+  # member = target is same clan
+  # neutral = no relation or no clan
+  playername-colors:
+    enemy: "&c"
+    ally: "&b"
+    member: "&a"
+    neutral: "&e"
+
+# Menu Configuration
+# Here you can use #RRGGGBB hex color codes in item names and lores for more customization!
+menu:
+  main:
+    title: "&8Clan Menu"
+    size: 45
+    items:
+    # First menú "create clan"
+      create-clan:
+        slot: 22
+        material: EMERALD
+        name: "&aCreate Clan"
+        lore:
+          - "&fCreate a new clan"
+          - ""
+          - "&cClick to create!"
+    # Second menú "After creating clan"
+      clan-details:
+        slot: 20
+        material: BOOK
+        name: "&bClan Details"
+        lore:
+          - "&fOpen detailed clan info"
+          - "&fMembers, color & stats"
+          - ""
+          - "&cClick to open!"
+      clan-list:
+        slot: 22
+        material: DIAMOND
+        name: "&eClan List"
+        lore:
+          - "&fView top clans by KDR"
+          - ""
+          - "&cClick to view!"
+      player-stats:
+        slot: 24
+        material: PAPER
+        name: "&eYour Stats"
+        lore:
+          - "&fKills: &a%clan_player_kills% &8(&e%clan_player_kill_percent%%&8)"
+          - "&fDeaths: &c%clan_player_deaths%"
+          - "&fKDR: &e%clan_player_kdr%"
+          - ""
+          - "&cCounts only while in clan"
+      fill:
+        material: GRAY_STAINED_GLASS_PANE
+        name: " "
+        lore: []
+        slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44]
+
+  members:
+    title: "&8Clan Members"
+    size: 54
+    fill:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53]     
+    leader-item:
+      material: PLAYER_HEAD
+      name: "&6%player%"
+      lore:
+        - "&fRole: &6Leader"
+        - "&fJoined: &c%cubeclans_joined%"
+    member-item:
+      material: PLAYER_HEAD
+      name: "&a%player%"
+      lore:
+        - "&fRole: &aMember"
+        - "&fJoined: &c%cubeclans_joined%"
+    back:
+      slot: 49
+      material: ARROW
+      name: "&cBack"
+      lore:
+        - "&fReturn to clan details"
+    previous-page:
+      slot: 45
+      material: ARROW
+      name: "&ePrevious Page"
+      lore:
+        - "&fGo to previous page"
+    next-page:
+      slot: 53
+      material: ARROW
+      name: "&aNext Page"
+      lore:
+        - "&fGo to next page"
+
+  clan-details:
+    title: "&8Clan Details"
+    size: 45
+    items:
+      fill:
+        material: GRAY_STAINED_GLASS_PANE
+        name: " "
+        lore: []
+        slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44]
+      info:
+        slot: 20
+        material: PLAYER_HEAD
+        name: "&bClan Information"
+        lore:
+          - "&fLeader: &a%cubeclans_leader%"
+          - "&fMembers: &a%cubeclans_members%&7/&c%cubeclans_max_members%"
+          - "&fCreated: &e%cubeclans_created%"
+          - "&fBank: &a$%cubeclans_bank%"
+          - "&fKDR: &e%cubeclans_kdr%"
+          - "&fKills: &a%cubeclans_kills%"
+          - "&fDeaths: &c%cubeclans_deaths%"
+      members:
+        slot: 22
+        material: BOOK
+        name: "&6Clan Members"
+        lore:
+          - "&fView all clan members"
+          - ""
+          - "&fMembers: &a%cubeclans_members%&7/&c%cubeclans_max_members%"
+      color:
+        slot: 24
+        material: LAPIS_LAZULI
+        name: "&9Clan Color"
+        lore:
+          - "&fChange your clan name"
+          - "&fdisplay color"
+          - ""
+          - "&cClick to open!"
+      relations:
+        slot: 30
+        material: PAPER
+        name: "&dClan Relations"
+        lore:
+          - "&fAllies: &a%cubeclans_allies%&7/&c%cubeclans_max_allies%"
+          - "&7(%cubeclans_ally_names%)" #this is optional
+          - ""
+          - "&fEnemies: &a%cubeclans_enemies%&7/&c%cubeclans_max_enemies%"
+          - "&7(%cubeclans_enemy_names%)" #this is optional
+          - ""
+          - "&eManage with /clan ally & /clan enemy"
+      back:
+        slot: 40
+        material: ARROW
+        name: "&cBack"
+        lore:
+          - "&fReturn to main menu"
+
+  color-selector:
+    title: "&8Clan Color"
+    size: 36
+    back:
+      slot: 31
+      material: ARROW
+      name: "&cBack"
+      lore:
+        - "&fReturn to clan details"
+    fill:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+    # Fully configurable color options
+    colors:
+      - slot: 10
+        material: WHITE_DYE
+        name: "&fWhite"
+        code: "&f"
+      - slot: 11
+        material: ORANGE_DYE
+        name: "&6Gold"
+        code: "&6"
+      - slot: 12
+        material: MAGENTA_DYE
+        name: "&dLight Purple"
+        code: "&d"
+      - slot: 13
+        material: LIGHT_BLUE_DYE
+        name: "&bAqua"
+        code: "&b"
+      - slot: 14
+        material: YELLOW_DYE
+        name: "&eYellow"
+        code: "&e"
+      - slot: 15
+        material: LIME_DYE
+        name: "&aGreen"
+        code: "&a"
+      - slot: 16
+        material: PINK_DYE
+        name: "&dPink"
+        code: "&d"
+      - slot: 19
+        material: GRAY_DYE
+        name: "&7Gray"
+        code: "&7"
+      - slot: 20
+        material: LIGHT_GRAY_DYE
+        name: "&8Dark Gray"
+        code: "&8"
+      - slot: 21
+        material: CYAN_DYE
+        name: "&3Dark Aqua"
+        code: "&3"
+      - slot: 22
+        material: PURPLE_DYE
+        name: "&5Dark Purple"
+        code: "&5"
+      - slot: 23
+        material: BLUE_DYE
+        name: "&9Blue"
+        code: "&9"
+      - slot: 24
+        material: GREEN_DYE
+        name: "&2Dark Green"
+        code: "&2"
+      - slot: 25
+        material: RED_DYE
+        name: "&cRed"
+        code: "&c"
+      - slot: 30
+        material: BLACK_DYE
+        name: "&0Black"
+        code: "&0"
+
+  clan-list:
+    title: "&8Clan list"
+    size: 54
+    fill:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+      slots: [0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53]
+    clan-item:
+      material: PAPER
+      name: "&e#{rank} &f{clan_name}"
+      lore:
+        - "&fLeader: &c{leader}"
+        - "&fMembers: &a{members}"
+        - ""
+        - "&fKDR: &e{kdr}"
+        - "&fKills: &a{kills}"
+        - "&fDeaths: &c{deaths}"
+    no-clans:
+      slot: 22
+      material: BARRIER
+      name: "&cNo Clans Found"
+      lore:
+        - "&fThere are no clans yet!"
+        - ""
+        - "&cCreate one with /clan create"
+    back:
+      slot: 49
+      material: ARROW
+      name: "&cBack"
+      lore:
+        - "&fReturn to main menu"
+    previous-page:
+      slot: 45
+      material: ARROW
+      name: "&ePrevious Page"
+      lore:
+        - "&fGo to previous page"
+    next-page:
+      slot: 53
+      material: ARROW
+      name: "&eNext Page"
+      lore:
+        - "&fGo to next page"

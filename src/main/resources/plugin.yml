@@ -1,0 +1,92 @@
+name: CubeClans
+version: '${project.version}'
+main: com.cubeclans.CubeClans
+api-version: '1.20'
+author: nasheent
+description: A complete clan system for Minecraft servers
+
+softdepend: [PlaceholderAPI, Vault]
+
+commands:
+  clan:
+    description: Open the clan menu
+    usage: /clan
+    aliases: [clans, c]
+
+permissions:
+  cubeclans.use:
+    description: Allows using the clan system (access to all player commands)
+    default: false
+    children:
+      cubeclans.create: true
+      cubeclans.invite: true
+      cubeclans.accept: true
+      cubeclans.leave: true
+      cubeclans.kick: true
+      cubeclans.promote: true
+      cubeclans.demote: true
+      cubeclans.disband: true
+      cubeclans.pvp: true
+      cubeclans.chat: true
+      cubeclans.bank: true
+      cubeclans.ally: true
+      cubeclans.enemy: true
+      cubeclans.list: true
+  cubeclans.create:
+    description: Allows creating clans
+    default: false
+  cubeclans.invite:
+    description: Allows inviting players to clan
+    default: false
+  cubeclans.accept:
+    description: Allows accepting clan invitations
+    default: false
+  cubeclans.leave:
+    description: Allows leaving a clan
+    default: false
+  cubeclans.kick:
+    description: Allows kicking members from clan
+    default: false
+  cubeclans.promote:
+    description: Allows promoting clan members
+    default: false
+  cubeclans.demote:
+    description: Allows demoting clan members
+    default: false
+  cubeclans.disband:
+    description: Allows disbanding own clan
+    default: false
+  cubeclans.pvp:
+    description: Allows toggling friendly fire
+    default: false
+  cubeclans.chat:
+    description: Allows using clan chat
+    default: false
+  cubeclans.bank:
+    description: Allows using clan bank (deposit/withdraw)
+    default: false
+  cubeclans.ally:
+    description: Allows managing alliances
+    default: false
+  cubeclans.enemy:
+    description: Allows declaring enemies
+    default: false
+  cubeclans.list:
+    description: Allows viewing clan rankings by KDR
+    default: false
+  cubeclans.admin:
+    description: Allows administrative control over clans
+    default: op
+    children:
+      cubeclans.admin.disband: true
+      cubeclans.admin.reload: true
+      cubeclans.admin.resetkdr: true
+  cubeclans.admin.disband:
+    description: Allows disbanding any clan as admin
+    default: op
+  cubeclans.admin.reload:
+    description: Allows reloading CubeClans config
+    default: op
+  cubeclans.admin.resetkdr:
+    description: Allows resetting clan KDR stats
+    default: op

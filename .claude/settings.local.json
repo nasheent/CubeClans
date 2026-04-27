@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\Git\\\\bin\"; cd \"c:\\\\Users\\\\AnTma\\\\OneDrive\\\\Desktop\\\\plug\\\\CubeClans\"; git init; git add .; git commit -m \"Initial commit - CubeClans 1.0.5\")"
+    ]
+  }
+}

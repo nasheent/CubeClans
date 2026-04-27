@@ -1,0 +1,28 @@
+# Build output
+target/
+*.jar
+*.war
+*.ear
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Plugin data (for testing)
+plugins/
+logs/
+crash-reports/
+world/
+world_nether/
+world_the_end/
+
+# Maven
+dependency-reduced-pom.xml

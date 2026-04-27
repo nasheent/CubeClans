@@ -1,0 +1,170 @@
+# CubeClans Messages Configuration
+# All plugin messages are configured here
+
+# General Messages
+prefix: "&8[&bCubeClans&8]&r"
+no-permission: "&cYou don't have permission to do that!"
+player-only: "&cThis command can only be used by players!"
+
+# Clan Creation
+clan-created: "&aSuccessfully created clan &f%clan%&a!"
+clan-create-prompt: "&aPlease type the clan name in chat. If you want to cancel, type 'cancel'."
+clan-name-too-short: "&cClan name must be at least %min% characters long!"
+clan-name-too-long: "&cClan name cannot exceed %max% characters!"
+clan-already-exists: "&cA clan with that name already exists!"
+already-in-clan: "&cYou are already in a clan!"
+clan-create-usage: "&cUsage: /clan create <name>"
+clan-creation-cancelled: "&cClan creation cancelled."
+insufficient-funds: "&cYou don't have enough money to create a clan! Cost: &f$%cost%"
+
+# Clan Deletion
+clan-deleted: "&aClan successfully deleted!"
+clan-not-leader: "&cYou must be the clan leader to do that!"
+disband-confirmation-required: "&e&lWARNING! &cYou are about to delete your clan &f%clan%&c! Execute &e/clan disband &cagain within &e10 seconds &cto confirm."
+
+# Clan Invitations
+invite-sent: "&aInvitation sent to &f%player%&a!"
+invite-received: "&aYou have been invited to join &f%clan%&a! Use &f/clan accept %clan%&a to join."
+player-not-found: "&cPlayer not found or is not online!"
+already-in-clan-other: "&cThat player is already in a clan!"
+clan-full: "&cYour clan is full! Maximum members: %max%"
+
+# Clan Join
+clan-joined: "&aYou have joined clan &f%clan%&a!"
+member-joined: "&a%player% has joined the clan!"
+no-invitation: "&cYou don't have an invitation to that clan!"
+
+# Clan Leave
+clan-left: "&aYou have left the clan!"
+member-left: "&e%player% has left the clan."
+leader-cannot-leave: "&cAs the clan leader, you must disband the clan or transfer leadership first!"
+
+# Clan Kick
+player-kicked: "&aYou kicked &f%player%&a from the clan!"
+you-were-kicked: "&cYou have been kicked from clan &f%clan%&c!"
+kicked-broadcast: "&e%player% was kicked from the clan."
+not-in-your-clan: "&cThat player is not in your clan!"
+cannot-kick-yourself: "&cYou cannot kick yourself!"
+
+# Clan Info
+not-in-clan: "&cYou are not in a clan!"
+clan-not-found: "&cClan not found!"
+pvp-not-allowed-message: "&cPvP is not allowed between clan members!"
+
+# Admin Commands
+clan-disbanded-admin: "&aYou disbanded the clan &f%clan%&a!"
+clan-disbanded-notification: "&cYour clan has been disbanded by an administrator!"
+config-reloaded: "&aCubeClans configuration reloaded successfully."
+
+# Clan Protection
+pvp-not-allowed: "&cPvP is not allowed between clan members!"
+clan-pvp-enabled: "&aFriendly fire enabled for your clan."
+clan-pvp-disabled: "&cFriendly fire disabled for your clan."
+clan-color-updated: "&aClan color updated to %color%"
+color-change-cooldown: "&cYou must wait %time% second(s) before changing color again!"
+
+# Clan Chat
+clan-chat-enabled: "&aClan chat enabled. Your messages will go to clan members only."
+clan-chat-disabled: "&cClan chat disabled. You are back to public chat."
+clan-chat-format: "&e&lCHAT CLAN &8» &8[&b%clan%&8] &7%player%: &f%message%"
+clan-ally-chat-enabled: "&aAllies chat enabled. Your messages will go to allied clans."
+clan-ally-chat-disabled: "&cAllies chat disabled. You are back to public chat."
+clan-ally-chat-format: "&d&lCHAT ALLY &8» &8[&b%clan%&8] &7%player%: &f%message%"
+clan-ally-chat-no-allies: "&7No allies yet!"
+
+# Alliances
+ally-request-sent: "&aAlliance request sent to &f%clan%&a!"
+ally-request-received: "&aClan &f%clan% &awants to be your ally! Use &e/clan ally accept %clan% &ato accept."
+ally-request-accepted: "&aYou are now allies with &f%clan%&a!"
+ally-request-denied: "&cYou denied the alliance request from &f%clan%&c."
+ally-removed: "&aAlliance with &f%clan% &ahas been removed."
+ally-already-exists: "&cYou are already allies with that clan!"
+ally-limit-reached: "&cYou have reached the maximum number of allies!"
+ally-target-limit-reached: "&cThat clan has reached their maximum number of allies!"
+no-ally-requests: "&cYou have no pending alliance requests!"
+no-ally-request-from-clan: "&cYou don't have an alliance request from that clan!"
+cannot-ally-yourself: "&cYou cannot send an alliance request to your own clan!"
+must-be-leader-ally: "&cOnly the clan leader can manage alliances!"
+ally-list-header: "&8&m-------&r &bClan Allies &8&m-------"
+ally-list-item: "&7- &f%clan%"
+ally-list-empty: "&7No allies yet!"
+
+# Enemies
+enemy-added: "&cYou declared &f%clan% &cas an enemy!"
+enemy-declared-by: "&cClan &f%clan% &chas declared you as an enemy!"
+enemy-removed: "&aYou are no longer enemies with &f%clan%&a!"
+enemy-removed-by: "&aClan &f%clan% &aremoved you from their enemy list!"
+enemy-limit-reached: "&cYou have reached the maximum number of enemies!"
+enemy-target-limit-reached: "&cThat clan has reached their maximum number of enemies!"
+cannot-enemy-yourself: "&cYou cannot declare your own clan as an enemy!"
+not-enemy-with-clan: "&cYou are not enemies with that clan!"
+enemy-list-header: "&8&m-------&r &cClan Enemies &8&m-------"
+enemy-list-item: "&7- &f%clan%"
+enemy-list-empty: "&7No enemies yet!"
+
+# Clan Bank
+no-bank-permission: "&cOnly the clan leader or co-leader can use the clan bank!"
+bank-deposit-success: "&aDeposited &e$%amount% &ato clan bank. New balance: &e$%balance%"
+bank-withdraw-success: "&aWithdrew &e$%amount% &afrom clan bank. New balance: &e$%balance%"
+bank-not-enough-player: "&cYou don't have enough money."
+bank-not-enough-clan: "&cClan bank doesn't have enough money."
+bank-invalid-amount: "&cInvalid amount."
+bank-amount-positive: "&cAmount must be positive."
+bank-balance: "&aClan bank balance: &e$%balance%"
+bank-vault-missing: "&cVault economy not found!"
+
+# KDR Admin Messages
+kdr-reset-success: "&aKDR stats reset for clan &f%clan%&a!"
+kdr-reset-clan-not-found: "&cClan not found: &f%clan%"
+
+# Promote/Demote Messages
+no-promote-permission: "&cYou don't have permission to promote members!"
+no-demote-permission: "&cYou don't have permission to demote members!"
+cannot-promote-leader: "&cYou cannot promote the clan leader!"
+cannot-demote-leader: "&cYou cannot demote the clan leader!"
+rank-error: "&cError loading rank information!"
+already-max-rank: "&cThis player is already at the maximum rank!"
+already-min-rank: "&cThis player is already at the minimum rank!"
+cannot-promote-higher: "&cYou cannot promote someone to your rank or higher!"
+cannot-demote-higher: "&cYou cannot demote someone at your rank or higher!"
+player-promoted: "&aYou promoted &f%player% &ato %rank%&a!"
+you-were-promoted: "&aYou have been promoted to %rank%&a!"
+player-demoted: "&eYou demoted &f%player% &eto %rank%&e!"
+you-were-demoted: "&eYou have been demoted to %rank%&e!"
+
+# Help Command
+help-header: "&8&m------------------------"
+help-title: "&b&lCubeClans Commands"
+help-title-page: "&b&lCubeClans Commands &7(Page %page%/2)"
+help-footer: "&8&m------------------------"
+help-clan: "&e/clan &7- Open clan menu"
+help-create: "&e/clan create <name> &7- Create a clan"
+help-disband: "&e/clan disband &7- Disband your clan"
+help-invite: "&e/clan invite <player> &7- Invite a player"
+help-accept: "&e/clan accept <clan> &7- Accept invitation"
+help-leave: "&e/clan leave &7- Leave your clan"
+help-kick: "&e/clan kick <player> &7- Kick a member"
+help-promote: "&e/clan promote <player> &7- Promote a member"
+help-demote: "&e/clan demote <player> &7- Demote a member"
+help-info: "&e/clan info [clan] &7- View clan info"
+help-members: "&e/clan members &7- View clan members"
+help-ally: "&e/clan ally <clan> &7- Send alliance request"
+help-chat-ally: "&e/clan chat ally &7- Toggle allies chat"
+help-ally-accept: "&e/clan ally accept <clan> &7- Accept alliance"
+help-ally-deny: "&e/clan ally deny <clan> &7- Deny alliance"
+help-ally-remove: "&e/clan ally remove <clan> &7- Remove alliance"
+help-ally-list: "&e/clan ally list &7- List your allies"
+help-enemy: "&e/clan enemy <clan> &7- Declare/remove enemy (toggle)"
+help-enemy-remove: "&e/clan enemy remove <clan> &7- Remove enemy"
+help-enemy-list: "&e/clan enemy list &7- List your enemies"
+help-pvp: "&e/clan pvp &7- Toggle friendly fire"
+help-chat: "&e/clan chat &7- Toggle clan chat"
+help-bank-deposit: "&e/clan bank deposit <amount> &7- Deposit money"
+help-bank-withdraw: "&e/clan bank withdraw <amount> &7- Withdraw money"
+help-bank-balance: "&e/clan bank balance &7- View bank balance"
+help-list: "&e/clan list &7- View clan rankings by KDR"
+kdr-stats-format: "&7Clan KDR: &e%cubeclans_kdr% &7Kills: &a%cubeclans_kills% &7Deaths: &c%cubeclans_deaths%"
+clan-list-opening: "&aOpening clan rankings..."
+help-admin-disband: "&e/clan admin disband <clan> &7- Disband any clan"
+help-admin-reload: "&e/clan admin reload &7- Reload CubeClans config"
+help-admin-resetkdr: "&e/clan admin resetkdr <clan> &7- Reset clan KDR stats"

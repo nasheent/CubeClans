@@ -1,0 +1,47 @@
+# CubeClans Ranks Configuration
+#
+# ladder-position: Higher number = higher hierarchy (2 > 1 > 0)
+# default: Auto-assigned to new members
+# prefix: Chat prefix (%color% = clan color, %clan% = clan name)
+#
+# Available Permissions:
+# ALL, INVITE, KICK, DISBAND, COLORS, ALLY, ENEMY, PVP,
+# BANK_DEPOSIT, BANK_WITHDRAW, BANK_BALANCE, BANK_LOGS, CHAT, PROMOTE, DEMOTE
+
+ranks:
+  leader:
+    display-name: "&aLeader"
+    prefix: "&8[%color%**%clan%&8] &r"
+    ladder-position: 2
+    permissions:
+      - 'ALL'
+  
+  coleader:
+    display-name: "&cCo-Leader"
+    prefix: "&8[%color%*%clan%&8] &r"
+    ladder-position: 1
+    permissions:
+      - 'INVITE'
+      - 'KICK'
+      - 'COLORS'
+      - 'ALLY'
+      - 'ENEMY'
+      - 'PVP'
+      - 'BANK_DEPOSIT'
+      - 'BANK_WITHDRAW'
+      - 'BANK_BALANCE'
+      - 'BANK_LOGS'
+      - 'CHAT'
+      - 'PROMOTE'
+      - 'DEMOTE'
+  
+  member:
+    display-name: "&9Member"
+    prefix: "&8[%color%%clan%&8] &r"
+    ladder-position: 0
+    default: true
+    permissions:
+      - 'BANK_DEPOSIT'
+      - 'BANK_WITHDRAW'
+      - 'BANK_BALANCE'
+      - 'CHAT'

@@ -1,0 +1,8 @@
+      clan-rankings:  
+        slot: 32  
+        material: DIAMOND  
+        name: "&eClan Rankings"  
+        lore:  
+          - "&7View top clans by KDR"  
+          - ""  
+          - "&eClick to view!"  
