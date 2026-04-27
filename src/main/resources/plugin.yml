@@ -1,7 +1,7 @@
 name: CubeClans
 version: '${project.version}'
 main: com.cubeclans.CubeClans
-api-version: '1.20'
+api-version: '1.13'
 author: nasheent
 description: A complete clan system for Minecraft servers
 
